@@ -6,11 +6,12 @@ const UseEffectTutorial = () => {
 	const fetchData = async () => {
 		const req = await fetch('https://jsonplaceholder.typicode.com/comments');
 		const result = await req.json();
-    setData(result)
+    setData(result);
+    console.log('API called')
 	};
 	useEffect(() => {
 		fetchData();
-	});
+	},[]);
 	return (
 		<>
 			<p>Comments</p>
