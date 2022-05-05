@@ -15,7 +15,7 @@ const UseEffectTutorial = () => {
 	return (
 		<>
 			<p>Comments</p>
-      {data.map(i=>{
+      {data.slice(0,2).map(i=>{
         return(
           <div key={i.id}>
             <h3>{i.name}</h3>

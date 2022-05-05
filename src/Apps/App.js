@@ -2,6 +2,7 @@ import './App.css';
 import Counter from '../components/Hooks/useState';
 import Reducer from '../components/Hooks/useReducer';
 import Effect from '../components/Hooks/useEffect';
+import RefTutorial from '../components/Hooks/useRef';
 
 const  App = () =>{
   return (
@@ -11,6 +12,8 @@ const  App = () =>{
         <Reducer/>
         <br/>
         <Effect/>
+        <br/>
+        <RefTutorial/>
       </header>
     </div>
   );
