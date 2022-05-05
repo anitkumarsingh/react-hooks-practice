@@ -1,21 +1,30 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 
+const reducer = (state,action) =>{
+  switch (action.type) {
+    case 'INCREMENT':
+      return{count:state.count+1,showText:state.showText}
+    case 'TOGGLETEXT':
+      return {count:state.count,showText:!state.showText}
+    default:
+      return state;
+  }
+}
 const Reducer = () => {
-	const [count, setCount] = useState(0);
-	const [text, showText] = useState(true);
+  const [state,dispatch] = useReducer(reducer,{count:0,showText:true})
 	return (
 		<>
 			{' '}
-			{count}
+			{state.count}
 			<button
 				onClick={() => {
-					setCount(count + 1);
-					showText(!text);
+          dispatch({type:'INCREMENT'});
+          dispatch({type:'TOGGLETEXT'})
 				}}>
 				Click me
 			</button>
       <br/>
-			{text && 'This is text'}
+			{state.showText && 'This is text'}
 		</>
 	);
 };
