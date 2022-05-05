@@ -3,7 +3,7 @@ import { useRef } from "react";
 const RefTutorial = () =>{
   const inputRef = useRef(null);
   const refClickHandler = () =>{
-   console.log(inputRef.current.focus)
+   console.log(inputRef.current.style.backgroundColor='green')
   }
   return(
     <>
